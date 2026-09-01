@@ -40,6 +40,8 @@ export const Team = () => {
                 <img 
                   src={member.photo} 
                   alt={member.name} 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -78,6 +80,8 @@ export const Team = () => {
                 <img 
                   src={member.photo} 
                   alt={member.name} 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -116,6 +120,8 @@ export const Team = () => {
                 <img 
                   src={member.photo} 
                   alt={member.name} 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -154,6 +160,8 @@ export const Team = () => {
                 <img 
                   src={member.photo} 
                   alt={member.name} 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -192,6 +200,8 @@ export const Team = () => {
                 <img 
                   src={member.photo} 
                   alt={member.name} 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -210,7 +220,7 @@ export const Team = () => {
       </section>
 
       {/* ==================================================
-          6. EXECUTIVE MEMBERS (9)
+          6. EXECUTIVE MEMBERS ({teamData.executives.length})
          ================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="flex items-center space-x-3 border-l-4 border-indigo-500 pl-3">
@@ -224,7 +234,7 @@ export const Team = () => {
           {teamData.executives.map((member) => (
             <div key={member.id} className="glass-panel p-5 rounded-3xl text-center space-y-3 border border-slate-200/80 hover:shadow-md transition-all group">
               <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-white shadow-sm mx-auto group-hover:scale-105 transition-transform duration-300">
-                <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                <img src={member.photo} alt={member.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
               </div>
               <div className="space-y-0.5">
                 <h5 className="text-sm sm:text-base font-bold text-slate-900">{member.name}</h5>
@@ -252,7 +262,7 @@ export const Team = () => {
           {teamData.multimedia.map((member) => (
             <div key={member.id} className="glass-panel p-5 rounded-3xl text-center space-y-3 border border-slate-200/80 hover:shadow-md transition-all group">
               <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-white shadow-sm mx-auto group-hover:scale-105 transition-transform duration-300">
-                <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                <img src={member.photo} alt={member.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
               </div>
               <div className="space-y-0.5">
                 <h5 className="text-sm sm:text-base font-bold text-slate-900">{member.name}</h5>
@@ -280,7 +290,7 @@ export const Team = () => {
           {teamData.technical.map((member) => (
             <div key={member.id} className="glass-panel p-5 rounded-3xl text-center space-y-3 border border-slate-200/80 hover:shadow-md transition-all group">
               <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-white shadow-sm mx-auto group-hover:scale-105 transition-transform duration-300">
-                <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                <img src={member.photo} alt={member.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
               </div>
               <div className="space-y-0.5">
                 <h5 className="text-sm sm:text-base font-bold text-slate-900">{member.name}</h5>
@@ -308,7 +318,7 @@ export const Team = () => {
           {teamData.newsletter.map((member) => (
             <div key={member.id} className="glass-panel p-5 rounded-3xl text-center space-y-3 border border-slate-200/80 hover:shadow-md transition-all group">
               <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-white shadow-sm mx-auto group-hover:scale-105 transition-transform duration-300">
-                <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                <img src={member.photo} alt={member.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
               </div>
               <div className="space-y-0.5">
                 <h5 className="text-sm sm:text-base font-bold text-slate-900">{member.name}</h5>

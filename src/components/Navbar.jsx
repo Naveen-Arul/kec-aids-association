@@ -45,20 +45,20 @@ export const Navbar = ({ activePage, setActivePage, hasUpcomingEvents, setHasUpc
         <div className="flex items-center justify-between h-14 sm:h-16">
           
           {/* LEFT: Institution & Association Logos + Branding */}
-          <div className="flex items-center space-x-3 cursor-pointer h-full py-1" onClick={() => handleNavClick('home')}>
-            <div className="flex items-center space-x-2.5 h-full py-0.5">
+          <div className="flex items-center space-x-2 sm:space-x-3 cursor-pointer h-full py-1" onClick={() => handleNavClick('home')}>
+            <div className="flex items-center space-x-1.5 sm:space-x-2.5 h-full py-0.5 max-w-[200px] xs:max-w-none">
               {/* Kongu Engineering College Logo */}
               <img 
                 src={siteConfig.institution.collegeLogo} 
                 alt="Kongu Engineering College Logo" 
-                className="h-full w-auto object-contain hover:scale-105 transition-transform duration-200"
+                className="h-full max-h-12 sm:max-h-16 w-auto object-contain hover:scale-105 transition-transform duration-200"
               />
-              <div className="h-4/5 w-px bg-slate-300 mx-1 hidden xs:block" />
+              <div className="h-3/4 w-px bg-slate-300 mx-0.5 sm:mx-1 block" />
               {/* Association Logo */}
               <img 
                 src={siteConfig.association.logo} 
                 alt="AI & DS Association Logo" 
-                className="h-full w-auto object-contain hover:scale-105 transition-transform duration-200"
+                className="h-full max-h-12 sm:max-h-16 w-auto object-contain hover:scale-105 transition-transform duration-200"
               />
             </div>
             

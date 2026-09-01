@@ -3,11 +3,10 @@ import { Calendar, Clock, MapPin, ExternalLink, Sparkles, Filter, Search } from 
 import { eventsData } from '../data/eventsData';
 
 export const Events = ({ setSelectedEvent }) => {
-  const [activeTab, setActiveTab] = useState('past'); // 'past' | 'upcoming'
-  const [searchTerm, setSearchTerm] = useState('');
-
   const upcomingEvents = eventsData.filter(e => e.isUpcoming);
   const pastEvents = eventsData.filter(e => !e.isUpcoming);
+  const [activeTab, setActiveTab] = useState(upcomingEvents.length > 0 ? 'upcoming' : 'past');
+  const [searchTerm, setSearchTerm] = useState('');
 
   const displayedEvents = activeTab === 'upcoming' ? upcomingEvents : pastEvents;
 

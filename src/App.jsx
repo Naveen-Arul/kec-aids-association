@@ -25,7 +25,6 @@ function ScrollToTop() {
 }
 
 export default function App() {
-  const [hasUpcomingEvents, setHasUpcomingEvents] = useState(true);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [lightboxState, setLightboxState] = useState({
     isOpen: false,
@@ -67,10 +66,7 @@ export default function App() {
       <NeuralBackground />
 
       {/* STICKY GLASS NAVBAR */}
-      <Navbar 
-        hasUpcomingEvents={hasUpcomingEvents}
-        setHasUpcomingEvents={setHasUpcomingEvents}
-      />
+      <Navbar />
 
       {/* MAIN ROUTER CONTENT VIEWER */}
       <main className="flex-1 relative z-10 pt-4">
@@ -80,7 +76,6 @@ export default function App() {
             element={
               <Home 
                 setSelectedEvent={setSelectedEvent} 
-                hasUpcomingEvents={hasUpcomingEvents}
               />
             } 
           />
@@ -90,7 +85,6 @@ export default function App() {
             element={
               <Events 
                 setSelectedEvent={setSelectedEvent} 
-                hasUpcomingEvents={hasUpcomingEvents}
               />
             } 
           />
@@ -108,7 +102,6 @@ export default function App() {
             element={
               <Home 
                 setSelectedEvent={setSelectedEvent} 
-                hasUpcomingEvents={hasUpcomingEvents}
               />
             } 
           />

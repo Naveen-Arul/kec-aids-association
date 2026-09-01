@@ -24,14 +24,12 @@ import { galleryData } from '../data/galleryData';
 import { yearPlanData } from '../data/yearPlanData';
 import { announcementsData } from '../data/announcementsData';
 
-export const Home = ({ setSelectedEvent, hasUpcomingEvents }) => {
+export const Home = ({ setSelectedEvent }) => {
   const navigate = useNavigate();
   const [currentGalleryIdx, setCurrentGalleryIdx] = useState(0);
 
   // Filter upcoming & past events
-  const upcomingEvents = hasUpcomingEvents 
-    ? eventsData.filter(e => e.isUpcoming) 
-    : [];
+  const upcomingEvents = eventsData.filter(e => e.isUpcoming);
   const pastEventsPreview = eventsData.filter(e => !e.isUpcoming).slice(0, 3);
   const featuredGallery = galleryData.slice(0, 6);
 

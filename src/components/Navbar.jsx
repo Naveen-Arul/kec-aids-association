@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { Menu, X, ToggleLeft, ToggleRight, Sparkles, ExternalLink } from 'lucide-react';
+import { Menu, X, ExternalLink } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 
-export const Navbar = ({ hasUpcomingEvents, setHasUpcomingEvents }) => {
+export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -96,34 +96,8 @@ export const Navbar = ({ hasUpcomingEvents, setHasUpcomingEvents }) => {
             })}
           </nav>
 
-          {/* RIGHT ACTIONS: State Switcher Badge */}
-          <div className="hidden md:flex items-center space-x-3">
-            <button
-              onClick={() => setHasUpcomingEvents(!hasUpcomingEvents)}
-              title="Toggle between State 1 (Upcoming Events Active) & State 2 (Stay Tuned Empty State)"
-              className="flex items-center space-x-1.5 px-3 py-1 text-[11px] font-medium rounded-full bg-slate-100/90 text-slate-700 hover:bg-cyan-50 border border-slate-200 transition-colors"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-brand-cyan" />
-              <span>Events: <strong className={hasUpcomingEvents ? "text-emerald-600" : "text-amber-600"}>
-                {hasUpcomingEvents ? "Active" : "Stay Tuned"}
-              </strong></span>
-              {hasUpcomingEvents ? (
-                <ToggleRight className="w-4 h-4 text-emerald-600 ml-1" />
-              ) : (
-                <ToggleLeft className="w-4 h-4 text-slate-400 ml-1" />
-              )}
-            </button>
-          </div>
-
           {/* MOBILE HAMBURGER BUTTON */}
           <div className="flex lg:hidden items-center space-x-2">
-            <button
-              onClick={() => setHasUpcomingEvents(!hasUpcomingEvents)}
-              className="text-[10px] bg-slate-100 px-2 py-1 rounded text-slate-600 border"
-            >
-              State: {hasUpcomingEvents ? 'Active' : 'Stay Tuned'}
-            </button>
-
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle Menu"

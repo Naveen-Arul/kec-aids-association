@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import { Calendar, Clock, MapPin, ExternalLink, Sparkles, Filter, Search } from 'lucide-react';
 import { eventsData } from '../data/eventsData';
 
-export const Events = ({ setSelectedEvent, hasUpcomingEvents }) => {
-  const [activeTab, setActiveTab] = useState('upcoming'); // 'upcoming' | 'past'
+export const Events = ({ setSelectedEvent }) => {
+  const [activeTab, setActiveTab] = useState('past'); // 'past' | 'upcoming'
   const [searchTerm, setSearchTerm] = useState('');
 
-  const upcomingEvents = hasUpcomingEvents 
-    ? eventsData.filter(e => e.isUpcoming) 
-    : [];
+  const upcomingEvents = eventsData.filter(e => e.isUpcoming);
   const pastEvents = eventsData.filter(e => !e.isUpcoming);
 
   const displayedEvents = activeTab === 'upcoming' ? upcomingEvents : pastEvents;

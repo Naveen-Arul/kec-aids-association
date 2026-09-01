@@ -27,7 +27,7 @@ export const siteConfig = {
     name: "Dr. P. Natesan",
     designation: "Head of the Department",
     department: "Department of Artificial Intelligence & Data Science",
-    photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+    photo: "/team/faculty-coordinators/Dr. P. Natesan - HEAD OF THE DEPARTMENT.webp",
     message: "Welcome to the official digital space of the Artificial Intelligence and Data Science Association at Kongu Engineering College. Our association stands as a vibrant catalyst for technical excellence, practical problem-solving, and continuous learning. We aim to equip students with hands-on analytical capabilities, foster interdisciplinary innovation, and prepare them to lead in the rapidly evolving landscape of AI and Data Science."
   },
   aboutDepartment: {

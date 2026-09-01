@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
   ArrowRight, 
   Calendar, 
@@ -23,7 +24,8 @@ import { galleryData } from '../data/galleryData';
 import { yearPlanData } from '../data/yearPlanData';
 import { announcementsData } from '../data/announcementsData';
 
-export const Home = ({ setActivePage, setSelectedEvent, hasUpcomingEvents }) => {
+export const Home = ({ setSelectedEvent, hasUpcomingEvents }) => {
+  const navigate = useNavigate();
   const [currentGalleryIdx, setCurrentGalleryIdx] = useState(0);
 
   // Filter upcoming & past events
@@ -88,7 +90,7 @@ export const Home = ({ setActivePage, setSelectedEvent, hasUpcomingEvents }) => 
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4">
                 <button
                   id="hero-explore-events-btn"
-                  onClick={() => setActivePage('events')}
+                  onClick={() => navigate('/events')}
                   className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-brand-blue to-brand-cyan text-white text-sm font-bold shadow-lg shadow-blue-500/20 hover:shadow-cyan-500/30 hover:scale-105 transition-all flex items-center justify-center space-x-2 group"
                 >
                   <span>Explore Events</span>
@@ -97,7 +99,7 @@ export const Home = ({ setActivePage, setSelectedEvent, hasUpcomingEvents }) => 
 
                 <button
                   id="hero-about-association-btn"
-                  onClick={() => setActivePage('about')}
+                  onClick={() => navigate('/about')}
                   className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/80 backdrop-blur-md text-brand-blue border border-cyan-200 text-sm font-bold shadow-sm hover:bg-cyan-50 hover:border-cyan-300 transition-all text-center"
                 >
                   About Association
@@ -165,7 +167,7 @@ export const Home = ({ setActivePage, setSelectedEvent, hasUpcomingEvents }) => 
             </p>
 
             <button 
-              onClick={() => setActivePage(announcementsData[0].actionTarget || 'events')}
+              onClick={() => navigate('/events')}
               className="px-4 py-2 rounded-full bg-slate-900 text-white text-xs font-semibold hover:bg-brand-blue transition-colors self-start md:self-auto flex items-center space-x-1"
             >
               <span>{announcementsData[0].linkText}</span>
@@ -212,7 +214,7 @@ export const Home = ({ setActivePage, setSelectedEvent, hasUpcomingEvents }) => 
 
             <div className="pt-4">
               <button
-                onClick={() => setActivePage('about')}
+                onClick={() => navigate('/about')}
                 className="px-6 py-3 rounded-full bg-brand-blue text-white text-xs font-bold shadow-md hover:bg-brand-darkBlue transition-colors flex items-center space-x-2"
               >
                 <span>Learn More About Us</span>
@@ -279,7 +281,7 @@ export const Home = ({ setActivePage, setSelectedEvent, hasUpcomingEvents }) => 
             </div>
             
             <button
-              onClick={() => setActivePage('year-plan')}
+              onClick={() => navigate('/year-plan')}
               className="px-5 py-2.5 rounded-full bg-white text-brand-blue border border-cyan-200 text-xs font-bold hover:bg-cyan-50 transition-colors flex items-center space-x-1.5 self-start md:self-auto"
             >
               <span>View Full Year Plan</span>
@@ -408,7 +410,7 @@ export const Home = ({ setActivePage, setSelectedEvent, hasUpcomingEvents }) => 
 
             <div className="pt-2">
               <button
-                onClick={() => setActivePage('events')}
+                onClick={() => navigate('/events')}
                 className="px-6 py-2.5 rounded-full bg-slate-900 text-white text-xs font-semibold hover:bg-brand-blue transition-colors"
               >
                 Browse Past Events
@@ -433,7 +435,7 @@ export const Home = ({ setActivePage, setSelectedEvent, hasUpcomingEvents }) => 
           </div>
 
           <button
-            onClick={() => setActivePage('events')}
+            onClick={() => navigate('/events')}
             className="px-6 py-2.5 rounded-full bg-white text-brand-blue border border-slate-200 text-xs font-bold hover:bg-slate-50 transition-colors flex items-center space-x-1.5 self-start sm:self-auto"
           >
             <span>View All Events</span>
@@ -501,7 +503,7 @@ export const Home = ({ setActivePage, setSelectedEvent, hasUpcomingEvents }) => 
             </div>
 
             <button
-              onClick={() => setActivePage('gallery')}
+              onClick={() => navigate('/gallery')}
               className="px-6 py-2.5 rounded-full bg-gradient-to-r from-brand-blue to-brand-teal text-white text-xs font-bold shadow-md hover:scale-105 transition-all flex items-center space-x-1.5 self-start sm:self-auto"
             >
               <span>Explore Full Gallery</span>

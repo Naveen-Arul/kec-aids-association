@@ -1,20 +1,23 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Phone, Mail, Instagram, MapPin, ArrowRight, ExternalLink } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 
-export const Footer = ({ setActivePage }) => {
+export const Footer = () => {
+  const navigate = useNavigate();
+
   const quickLinks = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About Department' },
-    { id: 'events', label: 'Technical Events' },
-    { id: 'gallery', label: 'Event Gallery' },
-    { id: 'team', label: 'Association Team' },
-    { id: 'year-plan', label: 'Academic Year Plan' },
-    { id: 'contact', label: 'Contact Us' }
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About Department' },
+    { path: '/events', label: 'Technical Events' },
+    { path: '/gallery', label: 'Event Gallery' },
+    { path: '/team', label: 'Association Team' },
+    { path: '/year-plan', label: 'Academic Year Plan' },
+    { path: '/contact', label: 'Contact Us' }
   ];
 
-  const handleLinkClick = (id) => {
-    setActivePage(id);
+  const handleLinkClick = (path) => {
+    navigate(path);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -70,9 +73,9 @@ export const Footer = ({ setActivePage }) => {
             </h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
-                <li key={link.id}>
+                <li key={link.path}>
                   <button
-                    onClick={() => handleLinkClick(link.id)}
+                    onClick={() => handleLinkClick(link.path)}
                     className="text-xs text-slate-300 hover:text-cyan-400 transition-colors flex items-center group"
                   >
                     <ArrowRight className="w-3 h-3 mr-1.5 opacity-0 group-hover:opacity-100 transition-all text-brand-cyan transform group-hover:translate-x-0.5" />
@@ -155,7 +158,7 @@ export const Footer = ({ setActivePage }) => {
                   <span>Google Maps Navigation ↗</span>
                 </a>
                 <button 
-                  onClick={() => handleLinkClick('about')}
+                  onClick={() => handleLinkClick('/about')}
                   className="text-slate-300 hover:text-white transition-colors text-left font-medium"
                 >
                   Learn About AI & DS Dept →

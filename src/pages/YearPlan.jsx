@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Calendar, CheckCircle2, Clock, Hourglass, ArrowRight } from 'lucide-react';
 import { yearPlanData } from '../data/yearPlanData';
 
-export const YearPlan = ({ setActivePage }) => {
+export const YearPlan = () => {
+  const navigate = useNavigate();
   return (
     <div className="space-y-14 pb-16 animate-fadeIn">
       
@@ -96,7 +98,7 @@ export const YearPlan = ({ setActivePage }) => {
       {/* FOOTER CTA */}
       <section className="text-center pt-8">
         <button
-          onClick={() => setActivePage('events')}
+          onClick={() => navigate('/events')}
           className="px-8 py-3.5 rounded-full bg-gradient-to-r from-brand-blue to-brand-cyan text-white text-xs font-bold shadow-lg hover:scale-105 transition-all inline-flex items-center space-x-2"
         >
           <span>Explore Detailed Events List</span>

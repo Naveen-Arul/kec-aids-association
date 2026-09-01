@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { Menu, X, ToggleLeft, ToggleRight, Sparkles, ExternalLink } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 
-export const Navbar = ({ activePage, setActivePage, hasUpcomingEvents, setHasUpcomingEvents }) => {
+export const Navbar = ({ hasUpcomingEvents, setHasUpcomingEvents }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,17 +23,17 @@ export const Navbar = ({ activePage, setActivePage, hasUpcomingEvents, setHasUpc
   }, []);
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'events', label: 'Events' },
-    { id: 'gallery', label: 'Gallery' },
-    { id: 'team', label: 'Team' },
-    { id: 'year-plan', label: 'Year Plan' },
-    { id: 'contact', label: 'Contact' },
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+    { path: '/events', label: 'Events' },
+    { path: '/gallery', label: 'Gallery' },
+    { path: '/team', label: 'Team' },
+    { path: '/year-plan', label: 'Year Plan' },
+    { path: '/contact', label: 'Contact' },
   ];
 
-  const handleNavClick = (id) => {
-    setActivePage(id);
+  const handleNavClick = (path) => {
+    navigate(path);
     setMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -45,7 +48,7 @@ export const Navbar = ({ activePage, setActivePage, hasUpcomingEvents, setHasUpc
         <div className="flex items-center justify-between h-14 sm:h-16">
           
           {/* LEFT: Institution & Association Logos + Branding */}
-          <div className="flex items-center space-x-2 sm:space-x-3 cursor-pointer h-full py-1" onClick={() => handleNavClick('home')}>
+          <div className="flex items-center space-x-2 sm:space-x-3 cursor-pointer h-full py-1" onClick={() => handleNavClick('/')}>
             <div className="flex items-center space-x-1.5 sm:space-x-2.5 h-full py-0.5 max-w-[200px] xs:max-w-none">
               {/* Kongu Engineering College Logo */}
               <img 
@@ -75,12 +78,12 @@ export const Navbar = ({ activePage, setActivePage, hasUpcomingEvents, setHasUpc
           {/* DESKTOP NAV LINKS */}
           <nav className="hidden lg:flex items-center space-x-1 bg-white/70 backdrop-blur-md p-1.5 rounded-full border border-slate-200/80 shadow-sm">
             {navItems.map((item) => {
-              const isActive = activePage === item.id;
+              const isActive = location.pathname === item.path;
               return (
                 <button
-                  key={item.id}
-                  id={`nav-${item.id}`}
-                  onClick={() => handleNavClick(item.id)}
+                  key={item.path}
+                  id={`nav-${item.label.toLowerCase().replace(' ', '-')}`}
+                  onClick={() => handleNavClick(item.path)}
                   className={`px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                     isActive
                       ? 'bg-gradient-to-r from-brand-blue to-brand-teal text-white shadow-sm scale-105'
@@ -138,11 +141,11 @@ export const Navbar = ({ activePage, setActivePage, hasUpcomingEvents, setHasUpc
         <div className="lg:hidden bg-white/95 backdrop-blur-xl border-b border-slate-200 px-4 pt-3 pb-6 shadow-xl animate-fadeIn">
           <div className="flex flex-col space-y-1">
             {navItems.map((item) => {
-              const isActive = activePage === item.id;
+              const isActive = location.pathname === item.path;
               return (
                 <button
-                  key={item.id}
-                  onClick={() => handleNavClick(item.id)}
+                  key={item.path}
+                  onClick={() => handleNavClick(item.path)}
                   className={`flex items-center justify-between px-4 py-3 text-sm font-semibold rounded-xl transition-all ${
                     isActive
                       ? 'bg-gradient-to-r from-brand-blue to-brand-teal text-white shadow-sm'

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { NeuralBackground } from './components/NeuralBackground';
@@ -14,8 +15,16 @@ import { Team } from './pages/Team';
 import { YearPlan } from './pages/YearPlan';
 import { Contact } from './pages/Contact';
 
+// Scroll to top on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 export default function App() {
-  const [activePage, setActivePage] = useState('home');
   const [hasUpcomingEvents, setHasUpcomingEvents] = useState(true);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [lightboxState, setLightboxState] = useState({
@@ -52,58 +61,62 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col relative bg-[#F8FAFC] text-slate-800 font-sans selection:bg-cyan-500 selection:text-white">
+      <ScrollToTop />
       
       {/* BACKGROUND AI CIRCUITS & BLOBS */}
       <NeuralBackground />
 
       {/* STICKY GLASS NAVBAR */}
       <Navbar 
-        activePage={activePage} 
-        setActivePage={setActivePage}
         hasUpcomingEvents={hasUpcomingEvents}
         setHasUpcomingEvents={setHasUpcomingEvents}
       />
 
-      {/* MAIN CONTENT VIEWER */}
+      {/* MAIN ROUTER CONTENT VIEWER */}
       <main className="flex-1 relative z-10 pt-4">
-        {activePage === 'home' && (
-          <Home 
-            setActivePage={setActivePage} 
-            setSelectedEvent={setSelectedEvent} 
-            hasUpcomingEvents={hasUpcomingEvents}
+        <Routes>
+          <Route 
+            path="/" 
+            element={
+              <Home 
+                setSelectedEvent={setSelectedEvent} 
+                hasUpcomingEvents={hasUpcomingEvents}
+              />
+            } 
           />
-        )}
-
-        {activePage === 'about' && (
-          <About setActivePage={setActivePage} />
-        )}
-
-        {activePage === 'events' && (
-          <Events 
-            setSelectedEvent={setSelectedEvent} 
-            hasUpcomingEvents={hasUpcomingEvents}
+          <Route path="/about" element={<About />} />
+          <Route 
+            path="/events" 
+            element={
+              <Events 
+                setSelectedEvent={setSelectedEvent} 
+                hasUpcomingEvents={hasUpcomingEvents}
+              />
+            } 
           />
-        )}
-
-        {activePage === 'gallery' && (
-          <Gallery onOpenLightbox={handleOpenLightbox} />
-        )}
-
-        {activePage === 'team' && (
-          <Team />
-        )}
-
-        {activePage === 'year-plan' && (
-          <YearPlan setActivePage={setActivePage} />
-        )}
-
-        {activePage === 'contact' && (
-          <Contact />
-        )}
+          <Route 
+            path="/gallery" 
+            element={<Gallery onOpenLightbox={handleOpenLightbox} />} 
+          />
+          <Route path="/team" element={<Team />} />
+          <Route path="/year-plan" element={<YearPlan />} />
+          <Route path="/contact" element={<Contact />} />
+          
+          {/* Catch-all fallback */}
+          <Route 
+            path="*" 
+            element={
+              <Home 
+                setSelectedEvent={setSelectedEvent} 
+                hasUpcomingEvents={hasUpcomingEvents}
+              />
+            } 
+          />
+        </Routes>
       </main>
 
       {/* FOOTER */}
-      <Footer setActivePage={setActivePage} />
+      <Footer />
 
       {/* EVENT DETAIL MODAL */}
       {selectedEvent && (

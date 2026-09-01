@@ -6,6 +6,8 @@ import { NeuralBackground } from './components/NeuralBackground';
 import { EventDetailModal } from './components/EventDetailModal';
 import { Lightbox } from './components/Lightbox';
 
+import { Preloader } from './components/Preloader';
+
 // Pages
 import { Home } from './pages/Home';
 import { About } from './pages/About';
@@ -25,6 +27,7 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [lightboxState, setLightboxState] = useState({
     isOpen: false,
@@ -60,6 +63,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col relative bg-[#F8FAFC] text-slate-800 font-sans selection:bg-cyan-500 selection:text-white">
+      {/* CIRCULAR LOGO PRELOADER ON ENTRANCE */}
+      {isLoading && <Preloader onFinish={() => setIsLoading(false)} />}
+
       <ScrollToTop />
       
       {/* BACKGROUND AI CIRCUITS & BLOBS */}

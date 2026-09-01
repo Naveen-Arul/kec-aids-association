@@ -1,12 +1,12 @@
 export const announcementsData = [
   {
     id: "ann-1",
-    title: "Registrations Open for Neural Hack 2026",
-    category: "Hackathon",
-    date: "March 01, 2026",
-    summary: "Form your team of up to 4 members and register before March 22 for the flagship AI hackathon.",
+    title: "Upcoming Flagship Event: NEWELL'S 2K26",
+    category: "Flagship Event",
+    date: "Coming Soon",
+    summary: "Details about event will be shared later.",
     isUrgent: true,
-    linkText: "Register Now",
+    linkText: "View Event Details",
     actionTarget: "events"
   },
   {

@@ -46,34 +46,34 @@ export const teamData = {
   jointSecretaries: [
     {
       id: "js-1",
+      name: "NISHANTH P",
+      rollNo: "",
+      designation: "Joint Secretary",
+      photo: "/team/AIA Members Individual Photo/Joint Secretary/NISHANTH P.jpg"
+    },
+    {
+      id: "js-2",
       name: "AKIL S",
       rollNo: "",
       designation: "Joint Secretary",
       photo: "/team/AIA Members Individual Photo/Joint Secretary/AKIL S .jpg"
     },
     {
-      id: "js-2",
+      id: "js-3",
       name: "HARINI K K",
       rollNo: "",
       designation: "Joint Secretary",
       photo: "/team/AIA Members Individual Photo/Joint Secretary/Harini KK.jpeg"
-    },
-    {
-      id: "js-3",
-      name: "NISHANTH P",
-      rollNo: "",
-      designation: "Joint Secretary",
-      photo: "/team/AIA Members Individual Photo/Joint Secretary/NISHANTH_.jpg"
     }
   ],
 
   treasurers: [
     {
       id: "tr-1",
-      name: "BOMMI PRIYANKA R",
-      rollNo: "24ADR024",
+      name: "KANISHKA S",
+      rollNo: "23ADR077",
       designation: "Treasurer",
-      photo: "/team/AIA Members Individual Photo/Treasurer/BOMMIPRIYANKA - 24ADR024 - TREASURER.png"
+      photo: "/team/AIA Members Individual Photo/Treasurer/kanishka s 23ADR077 .jpg"
     },
     {
       id: "tr-2",
@@ -84,10 +84,10 @@ export const teamData = {
     },
     {
       id: "tr-3",
-      name: "KANISHKA S",
-      rollNo: "23ADR077",
+      name: "BOMMI PRIYANKA R",
+      rollNo: "24ADR024",
       designation: "Treasurer",
-      photo: "/team/AIA Members Individual Photo/Treasurer/kanishka s 23ADR077 .jpg"
+      photo: "/team/AIA Members Individual Photo/Treasurer/BOMMIPRIYANKA - 24ADR024 - TREASURER.png"
     }
   ],
 
@@ -101,38 +101,38 @@ export const teamData = {
     },
     {
       id: "exec-2",
-      name: "DHARSHINI T",
-      rollNo: "25ADR029",
-      designation: "Executive Member",
-      photo: "/team/AIA Members Individual Photo/Executive/Dharshini T-25ADR029.png"
-    },
-    {
-      id: "exec-3",
-      name: "MEHAA G",
-      rollNo: "25ADR081",
-      designation: "Executive Member",
-      photo: "/team/AIA Members Individual Photo/Executive/Mehaa G-25ADR081.jpg"
-    },
-    {
-      id: "exec-4",
-      name: "MOULISHWARAN M",
-      rollNo: "24ADR083",
-      designation: "Executive Member",
-      photo: "/team/AIA Members Individual Photo/Executive/Moulishwaran_M_24ADR083_TECHNICAL_TEAM.jpg"
-    },
-    {
-      id: "exec-5",
       name: "NEETHU S",
       rollNo: "24ADR093",
       designation: "Executive Member",
       photo: "/team/AIA Members Individual Photo/Executive/NEETHU S -24ADR093.jpg"
     },
     {
-      id: "exec-6",
+      id: "exec-3",
+      name: "MOULISHWARAN M",
+      rollNo: "24ADR083",
+      designation: "Executive Member",
+      photo: "/team/AIA Members Individual Photo/Executive/Moulishwaran_M_24ADR083_TECHNICAL_TEAM.jpg"
+    },
+    {
+      id: "exec-4",
+      name: "DHARSHINI T",
+      rollNo: "25ADR029",
+      designation: "Executive Member",
+      photo: "/team/AIA Members Individual Photo/Executive/Dharshini T-25ADR029.png"
+    },
+    {
+      id: "exec-5",
       name: "NYISHANTH J K",
       rollNo: "25ADR103",
       designation: "Executive Member",
       photo: "/team/AIA Members Individual Photo/Executive/Nyishanth j. K-25ADR103.jpg"
+    },
+    {
+      id: "exec-6",
+      name: "SWATI",
+      rollNo: "25ADR158",
+      designation: "Executive Member",
+      photo: "/team/AIA Members Individual Photo/Executive/Swati - 25ADR158.jpeg"
     },
     {
       id: "exec-7",
@@ -143,166 +143,152 @@ export const teamData = {
     },
     {
       id: "exec-8",
-      name: "SWATI",
-      rollNo: "25ADR158",
+      name: "MEHAA G",
+      rollNo: "25ADR081",
       designation: "Executive Member",
-      photo: "/team/AIA Members Individual Photo/Executive/Swati - 25ADR158.jpeg"
+      photo: "/team/AIA Members Individual Photo/Executive/Mehaa G-25ADR081.jpg"
     }
   ],
 
   multimedia: [
     {
       id: "media-1",
+      name: "SOORYA G",
+      rollNo: "23ADR154",
+      designation: "Multimedia Team",
+      photo: "/team/AIA Members Individual Photo/Mediateam/Soorya G_23ADR154.jpeg"
+    },
+    {
+      id: "media-2",
       name: "DHARSHINI K",
       rollNo: "24ADR036",
       designation: "Multimedia Team",
       photo: "/team/AIA Members Individual Photo/Mediateam/DHARSHINI K-24ADR036-MULTIMEDIA.jpg"
     },
     {
-      id: "media-2",
-      name: "DHAYAANANTH P J",
-      rollNo: "25ADR032",
-      designation: "Multimedia Team",
-      photo: "/team/AIA Members Individual Photo/Mediateam/DHAYAANANTH P J 25ADR032.jpg"
-    },
-    {
       id: "media-3",
-      name: "KIRTHIK M",
-      rollNo: "24ADR066",
-      designation: "Multimedia Team",
-      photo: "/team/AIA Members Individual Photo/Mediateam/Kirthik M AIDS-B 24ADR066 Media Team.jpg"
-    },
-    {
-      id: "media-4",
       name: "LITHHISH R S",
       rollNo: "24ADR070",
       designation: "Multimedia Team",
       photo: "/team/AIA Members Individual Photo/Mediateam/LITHHISH.R.S_24ADR070.jpg"
     },
     {
-      id: "media-5",
-      name: "MATHISHREE",
-      rollNo: "25ADR080",
-      designation: "Multimedia Team",
-      photo: "/team/AIA Members Individual Photo/Mediateam/MATHISHREE_25ADR080.png"
-    },
-    {
-      id: "media-6",
+      id: "media-4",
       name: "MUHAMMED NAFEEZ M",
       rollNo: "24ADR085",
       designation: "Multimedia Team",
       photo: "/team/AIA Members Individual Photo/Mediateam/MUHAMMED_NAFEEZ_M-24ADR085-MULTIMEDIA.jpg"
     },
     {
+      id: "media-5",
+      name: "KIRTHIK M",
+      rollNo: "24ADR066",
+      designation: "Multimedia Team",
+      photo: "/team/AIA Members Individual Photo/Mediateam/Kirthik M AIDS-B 24ADR066 Media Team.jpg"
+    },
+    {
+      id: "media-6",
+      name: "DHAYAANANTH P J",
+      rollNo: "25ADR032",
+      designation: "Multimedia Team",
+      photo: "/team/AIA Members Individual Photo/Mediateam/DHAYAANANTH P J 25ADR032.jpg"
+    },
+    {
       id: "media-7",
+      name: "MATHISHREE",
+      rollNo: "25ADR080",
+      designation: "Multimedia Team",
+      photo: "/team/AIA Members Individual Photo/Mediateam/MATHISHREE_25ADR080.png"
+    },
+    {
+      id: "media-8",
       name: "NIVEDHITA",
       rollNo: "25ADR102",
       designation: "Multimedia Team",
       photo: "/team/AIA Members Individual Photo/Mediateam/NIVEDHITA_25ADR102.jpg"
-    },
-    {
-      id: "media-8",
-      name: "SOORYA G",
-      rollNo: "23ADR154",
-      designation: "Multimedia Team",
-      photo: "/team/AIA Members Individual Photo/Mediateam/Soorya G_23ADR154.jpeg"
     }
   ],
 
   technical: [
     {
       id: "tech-1",
-      name: "S. VIGNESH",
-      rollNo: "24ADR163",
-      designation: "Technical Team",
-      photo: "/team/AIA Members Individual Photo/Technical/24ADR163.jpg"
-    },
-    {
-      id: "tech-2",
-      name: "KANISHKA S",
-      rollNo: "25ADR061",
-      designation: "Technical Team",
-      photo: "/team/AIA Members Individual Photo/Technical/25ADR061 (KANISHKA.S).jpg"
-    },
-    {
-      id: "tech-3",
-      name: "ARAVINDALOCHANAN P",
-      rollNo: "",
-      designation: "Technical Team",
-      photo: "/team/AIA Members Individual Photo/Technical/Aravindalochanan P.jpg"
-    },
-    {
-      id: "tech-4",
       name: "DEEPSHEEKHA S",
       rollNo: "",
       designation: "Technical Team",
       photo: "/team/AIA Members Individual Photo/Technical/Deepsheekha S.jpg"
     },
     {
-      id: "tech-5",
-      name: "MOULISHWARAN M",
-      rollNo: "24ADR083",
+      id: "tech-2",
+      name: "VARSHA K",
+      rollNo: "",
       designation: "Technical Team",
-      photo: "/team/AIA Members Individual Photo/Technical/MOULISHWARAN_M -24ADR083.jpg"
+      photo: "/team/AIA Members Individual Photo/Technical/varsha k.jpg"
     },
     {
-      id: "tech-6",
+      id: "tech-3",
+      name: "THARIKA G",
+      rollNo: "24ADR163",
+      designation: "Technical Team",
+      photo: "/team/AIA Members Individual Photo/Technical/24ADR163.jpg"
+    },
+    {
+      id: "tech-4",
+      name: "ARAVINDALOCHANAN P",
+      rollNo: "",
+      designation: "Technical Team",
+      photo: "/team/AIA Members Individual Photo/Technical/Aravindalochanan P.jpg"
+    },
+    {
+      id: "tech-5",
       name: "RAHINI G",
       rollNo: "25ADR117",
       designation: "Technical Team",
       photo: "/team/AIA Members Individual Photo/Technical/Rahini G 25ADR117.jpg"
     },
     {
-      id: "tech-7",
-      name: "VARSHA K",
-      rollNo: "",
+      id: "tech-6",
+      name: "KANISHKA S",
+      rollNo: "25ADR061",
       designation: "Technical Team",
-      photo: "/team/AIA Members Individual Photo/Technical/varsha k.jpg"
+      photo: "/team/AIA Members Individual Photo/Technical/25ADR061 (KANISHKA.S).jpg"
     }
   ],
 
   newsletter: [
     {
       id: "news-1",
-      name: "DIVYA",
-      rollNo: "",
+      name: "VARUNIKA E B B",
+      rollNo: "23ADR183",
       designation: "Newsletter Team",
-      photo: "/team/AIA Members Individual Photo/Newsletter/divya .jpg"
+      photo: "/team/AIA Members Individual Photo/Newsletter/VARUNIKA E B B-23ADR183.jpg"
     },
     {
       id: "news-2",
-      name: "KARTHIYAINI V N",
-      rollNo: "25ADR063",
-      designation: "Newsletter Team",
-      photo: "/team/AIA Members Individual Photo/Newsletter/Karthiyaini VN_25ADR063.jpg"
-    },
-    {
-      id: "news-3",
-      name: "KAVIYA K",
-      rollNo: "25ADR066",
-      designation: "Newsletter Team",
-      photo: "/team/AIA Members Individual Photo/Newsletter/Kaviya K_25ADR066.jpg"
-    },
-    {
-      id: "news-4",
       name: "MANJARIKA",
       rollNo: "24ADR077",
       designation: "Newsletter Team",
       photo: "/team/AIA Members Individual Photo/Newsletter/MANJARIKA_24ADR077.jpg"
     },
     {
-      id: "news-5",
+      id: "news-3",
       name: "SIVASHANKAR",
       rollNo: "",
       designation: "Newsletter Team",
       photo: "/team/AIA Members Individual Photo/Newsletter/SIVASHANKAR.jpg"
     },
     {
-      id: "news-6",
-      name: "VARUNIKA E B B",
-      rollNo: "23ADR183",
+      id: "news-4",
+      name: "KAVIYA K",
+      rollNo: "25ADR066",
       designation: "Newsletter Team",
-      photo: "/team/AIA Members Individual Photo/Newsletter/VARUNIKA E B B-23ADR183.jpg"
+      photo: "/team/AIA Members Individual Photo/Newsletter/Kaviya K_25ADR066.jpg"
+    },
+    {
+      id: "news-5",
+      name: "KARTHIYAINI V N",
+      rollNo: "25ADR063",
+      designation: "Newsletter Team",
+      photo: "/team/AIA Members Individual Photo/Newsletter/Karthiyaini VN_25ADR063.jpg"
     }
   ]
 };

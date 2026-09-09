@@ -4,7 +4,7 @@ export const eventsData = [
     title: "NEWELL'S 2K26",
     slug: "newells-2k26",
     type: "Flagship Event",
-    poster: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80",
+    poster: "/event-posters/NEWELL-2K26.jpg",
     date: "To Be Announced",
     time: "To Be Announced",
     venue: "Kongu Engineering College",
@@ -18,7 +18,7 @@ export const eventsData = [
       "Details about event will be shared later"
     ],
     galleryImages: [
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80"
+      "/event-posters/NEWELL-2K26.jpg"
     ]
   },
   {

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Calendar, Clock, MapPin, ExternalLink, Sparkles, Filter, Search } from 'lucide-react';
 import { eventsData } from '../data/eventsData';
 
-export const Events = ({ setSelectedEvent }) => {
+export const Events = () => {
+  const navigate = useNavigate();
   const upcomingEvents = eventsData.filter(e => e.isUpcoming);
   const pastEvents = eventsData.filter(e => !e.isUpcoming);
   const [activeTab, setActiveTab] = useState(upcomingEvents.length > 0 ? 'upcoming' : 'past');
@@ -113,7 +115,13 @@ export const Events = ({ setSelectedEvent }) => {
             {filteredEvents.map((evt) => (
               <div 
                 key={evt.id}
-                className="glass-panel rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group"
+                role="link"
+                tabIndex={0}
+                onClick={() => navigate(`/events/${evt.slug}`)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') navigate(`/events/${evt.slug}`);
+                }}
+                className="glass-panel rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group cursor-pointer"
               >
                 <div>
                   {/* POSTER */}
@@ -164,7 +172,10 @@ export const Events = ({ setSelectedEvent }) => {
                 {/* CARD FOOTER */}
                 <div className="p-6 pt-0 flex items-center justify-between">
                   <button
-                    onClick={() => setSelectedEvent(evt)}
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      navigate(`/events/${evt.slug}`);
+                    }}
                     className="px-4 py-2 rounded-full bg-slate-100 hover:bg-cyan-50 text-brand-blue text-xs font-bold transition-colors"
                   >
                     View Details
@@ -175,6 +186,7 @@ export const Events = ({ setSelectedEvent }) => {
                       href={evt.registrationUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(event) => event.stopPropagation()}
                       className="px-4 py-2 rounded-full bg-gradient-to-r from-brand-blue to-brand-cyan text-white text-xs font-bold shadow-sm hover:scale-105 transition-all flex items-center space-x-1"
                     >
                       <span>Register</span>

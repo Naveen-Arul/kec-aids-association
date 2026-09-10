@@ -3,7 +3,6 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { NeuralBackground } from './components/NeuralBackground';
-import { EventDetailModal } from './components/EventDetailModal';
 import { Lightbox } from './components/Lightbox';
 
 import { Preloader } from './components/Preloader';
@@ -16,6 +15,7 @@ import { Gallery } from './pages/Gallery';
 import { Team } from './pages/Team';
 import { YearPlan } from './pages/YearPlan';
 import { Contact } from './pages/Contact';
+import { EventDetails, YearEventDetails } from './pages/EventDetails';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -28,7 +28,6 @@ function ScrollToTop() {
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [selectedEvent, setSelectedEvent] = useState(null);
   const [lightboxState, setLightboxState] = useState({
     isOpen: false,
     images: [],
@@ -81,7 +80,6 @@ export default function App() {
             path="/" 
             element={
               <Home 
-                setSelectedEvent={setSelectedEvent} 
               />
             } 
           />
@@ -90,10 +88,11 @@ export default function App() {
             path="/events" 
             element={
               <Events 
-                setSelectedEvent={setSelectedEvent} 
               />
             } 
           />
+          <Route path="/events/:slug" element={<EventDetails onOpenLightbox={handleOpenLightbox} />} />
+          <Route path="/events/newells-2k26/:year" element={<YearEventDetails />} />
           <Route 
             path="/gallery" 
             element={<Gallery onOpenLightbox={handleOpenLightbox} />} 
@@ -107,7 +106,6 @@ export default function App() {
             path="*" 
             element={
               <Home 
-                setSelectedEvent={setSelectedEvent} 
               />
             } 
           />
@@ -116,15 +114,6 @@ export default function App() {
 
       {/* FOOTER */}
       <Footer />
-
-      {/* EVENT DETAIL MODAL */}
-      {selectedEvent && (
-        <EventDetailModal 
-          event={selectedEvent} 
-          onClose={() => setSelectedEvent(null)}
-          onSelectImage={(item) => handleOpenLightbox([item], 0)}
-        />
-      )}
 
       {/* FULL-SCREEN LIGHTBOX */}
       {lightboxState.isOpen && (

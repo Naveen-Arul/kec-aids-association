@@ -333,7 +333,13 @@ export const Home = ({ setSelectedEvent }) => {
             {upcomingEvents.map((evt) => (
               <div 
                 key={evt.id} 
-                className="glass-panel rounded-3xl overflow-hidden shadow-lg border border-cyan-100 flex flex-col hover:shadow-xl transition-all"
+                role="link"
+                tabIndex={0}
+                onClick={() => navigate(`/events/${evt.slug}`)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') navigate(`/events/${evt.slug}`);
+                }}
+                className="glass-panel rounded-3xl overflow-hidden shadow-lg border border-cyan-100 flex flex-col hover:shadow-xl transition-all cursor-pointer"
               >
                 <div className="relative h-56 overflow-hidden">
                   <img 
@@ -369,7 +375,10 @@ export const Home = ({ setSelectedEvent }) => {
 
                   <div className="flex items-center justify-between pt-2">
                     <button
-                      onClick={() => setSelectedEvent(evt)}
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        navigate(`/events/${evt.slug}`);
+                      }}
                       className="text-xs font-semibold text-brand-blue hover:underline"
                     >
                       View Details
@@ -380,6 +389,7 @@ export const Home = ({ setSelectedEvent }) => {
                         href={evt.registrationUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={(event) => event.stopPropagation()}
                         className="px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-blue to-brand-cyan text-white text-xs font-bold shadow-md hover:scale-105 transition-all flex items-center space-x-1.5"
                       >
                         <span>Register Now</span>
@@ -445,7 +455,13 @@ export const Home = ({ setSelectedEvent }) => {
           {pastEventsPreview.map((evt) => (
             <div 
               key={evt.id}
-              className="glass-panel rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+              role="link"
+              tabIndex={0}
+              onClick={() => navigate(`/events/${evt.slug}`)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') navigate(`/events/${evt.slug}`);
+              }}
+              className="glass-panel rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between cursor-pointer"
             >
               <div>
                 <div className="h-44 overflow-hidden relative">
@@ -474,7 +490,10 @@ export const Home = ({ setSelectedEvent }) => {
 
               <div className="p-5 pt-0">
                 <button
-                  onClick={() => setSelectedEvent(evt)}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    navigate(`/events/${evt.slug}`);
+                  }}
                   className="w-full py-2 rounded-xl bg-slate-100 hover:bg-cyan-50 text-brand-blue text-xs font-bold transition-colors"
                 >
                   View Details
